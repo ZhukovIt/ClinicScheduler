@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FBE1C8A0-055F-439D-B18B-3FA88166E6D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClinicScheduler</RootNamespace>
+    <AssemblyName>ClinicScheduler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClinicCodificators">
+      <HintPath>..\..\Components\ClinicCodificators.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicCommon">
+      <HintPath>..\..\Components\ClinicCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicConferenceManager">
+      <HintPath>..\..\Components\ClinicConferenceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicCryptManager, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicCryptManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicDataModelCommon">
+      <HintPath>..\..\Components\ClinicDataModelCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicDataModelCore">
+      <HintPath>..\..\Components\ClinicDataModelCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicDictionaries">
+      <HintPath>..\..\Components\ClinicDictionaries.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicDictionariesGui">
+      <HintPath>..\..\Components\ClinicDictionariesGui.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicEDocuments, Version=1.0.19.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicEDocuments.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicEDocumentsCommon, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicEDocumentsCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicExternalStorageManager, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicExternalStorageManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicGuiCommon">
+      <HintPath>..\..\Components\ClinicGuiCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicLaboratoryCommon">
+      <HintPath>..\..\Components\ClinicLaboratoryCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicLaboratoryManager">
+      <HintPath>..\..\Components\ClinicLaboratoryManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicLogging">
+      <HintPath>..\..\Components\ClinicLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicMessageTemplates, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicMessageTemplates.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicMessenger, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicMessenger.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicMessengerManager, Version=1.0.19.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicMessengerManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicNotificationManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicNotificationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicOptions">
+      <HintPath>..\..\Components\ClinicOptions.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicOrganizations">
+      <HintPath>..\..\Components\ClinicOrganizations.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicPerson, Version=1.0.55.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicPerson.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicReportsCommon">
+      <HintPath>..\..\Components\ClinicReportsCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicReportsGUI">
+      <HintPath>..\..\Components\ClinicReportsGUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicSecurity">
+      <HintPath>..\..\Components\ClinicSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicService">
+      <HintPath>..\..\Components\ClinicService.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicVisits, Version=1.0.24.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\ClinicVisits.dll</HintPath>
+    </Reference>
+    <Reference Include="ClinicWorker">
+      <HintPath>..\..\Components\ClinicWorker.dll</HintPath>
+    </Reference>
+    <Reference Include="Cryptography.CryptoPro, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Cryptography.CryptoPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Cryptography.Microsoft, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Cryptography.Microsoft.dll</HintPath>
+    </Reference>
+    <Reference Include="Cryptography.VipNet, Version=1.0.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Cryptography.VipNet.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptographyCommon, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\CryptographyCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomControls">
+      <HintPath>..\..\Components\CustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip">
+      <HintPath>..\..\Components\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="Equin.ApplicationFramework.BindingListView">
+      <HintPath>..\..\Components\Equin.ApplicationFramework.BindingListView.dll</HintPath>
+    </Reference>
+    <Reference Include="LicenseCommon">
+      <HintPath>..\..\Components\LicenseCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Dll\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView">
+      <HintPath>..\..\Components\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="SiMedDB">
+      <HintPath>..\..\Components\SiMedDB.dll</HintPath>
+    </Reference>
+    <Reference Include="SiMedExchange, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\SiMedExchange.dll</HintPath>
+    </Reference>
+    <Reference Include="StatisticsCollectionSystemClient">
+      <HintPath>..\..\Components\StatisticsCollectionSystemClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbOperations.cs" />
+    <Compile Include="EmployerWebTasks\EmployerWebTaskNewMedInspection_Helper.cs" />
+    <Compile Include="EmployerWebTasks\EmployerWebTaskCommon.cs" />
+    <Compile Include="EmployerWebTasks\EmployerWebTaskExportSelectedResults_Helper.cs" />
+    <Compile Include="EmployerWebTasks\EmployerWebTaskExportSelectedResults_Request.cs" />
+    <Compile Include="EmployerWebTasks\EmployerWebTaskExportSelectedResults_Result.cs" />
+    <Compile Include="EmployerWebTasks\EmployerWebTaskNewMedInspection_Request.cs" />
+    <Compile Include="EmployerWebTasks\EmployerWebTaskNewMedInspection_Result.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="FileHelper_Mutex.cs" />
+    <Compile Include="F_AutoCheckAccountingActsTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AutoCheckAccountingActsTaskManager.Designer.cs">
+      <DependentUpon>F_AutoCheckAccountingActsTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_AutoCreateAccountingActsTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AutoCreateAccountingActsTaskManager.Designer.cs">
+      <DependentUpon>F_AutoCreateAccountingActsTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckIEMKTaskConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_CheckIEMKTaskConfig.Designer.cs">
+      <DependentUpon>F_CheckIEMKTaskConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ChoiceSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ChoiceSettings.Designer.cs">
+      <DependentUpon>F_ChoiceSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_EmployerWebTaskConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_EmployerWebTaskConfig.Designer.cs">
+      <DependentUpon>F_EmployerWebTaskConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ProcessedSiMedMobileReceivedTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ProcessedSiMedMobileReceivedTaskManager.Designer.cs">
+      <DependentUpon>F_ProcessedSiMedMobileReceivedTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_PropertiesTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_PropertiesTask.Designer.cs">
+      <DependentUpon>F_PropertiesTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_PropertiesSend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_PropertiesSend.Designer.cs">
+      <DependentUpon>F_PropertiesSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReportSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ReportSelect.Designer.cs">
+      <DependentUpon>F_ReportSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ResultTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ResultTaskManager.Designer.cs">
+      <DependentUpon>F_ResultTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_SheduledSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_SheduledSender.Designer.cs">
+      <DependentUpon>F_SheduledSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_TestAddressSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_TestAddressSelect.Designer.cs">
+      <DependentUpon>F_TestAddressSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitDB.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail.cs" />
+    <Compile Include="TaskManager.cs" />
+    <Compile Include="ZipArchiveHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="F_AutoCheckAccountingActsTaskManager.resx">
+      <DependentUpon>F_AutoCheckAccountingActsTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AutoCreateAccountingActsTaskManager.resx">
+      <DependentUpon>F_AutoCreateAccountingActsTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_CheckIEMKTaskConfig.resx">
+      <DependentUpon>F_CheckIEMKTaskConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ChoiceSettings.resx">
+      <DependentUpon>F_ChoiceSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_EmployerWebTaskConfig.resx">
+      <DependentUpon>F_EmployerWebTaskConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ProcessedSiMedMobileReceivedTaskManager.resx">
+      <DependentUpon>F_ProcessedSiMedMobileReceivedTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_PropertiesSend.resx">
+      <DependentUpon>F_PropertiesSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_PropertiesTask.resx">
+      <DependentUpon>F_PropertiesTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ReportSelect.resx">
+      <DependentUpon>F_ReportSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ResultTaskManager.resx">
+      <DependentUpon>F_ResultTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_SheduledSender.resx">
+      <DependentUpon>F_SheduledSender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_TestAddressSelect.resx">
+      <DependentUpon>F_TestAddressSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Preview-icon_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
